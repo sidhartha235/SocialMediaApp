@@ -2,24 +2,33 @@ package cloud.rest.socialmediaapp.Controllers;
 
 import cloud.rest.socialmediaapp.Instances.Post;
 import cloud.rest.socialmediaapp.Services.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
 
-    @Autowired
-    private PostService postService;
+    private final PostService postService;
+
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Post> getPostById(@PathVariable Long id) {
         Optional<Post> postOptional = postService.getPostById(id);
         return postOptional.map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Post>> getAllPosts() {
+        List<Post> postList = postService.getAllPosts();
+        return ResponseEntity.ok(postList);
     }
 
     @PostMapping

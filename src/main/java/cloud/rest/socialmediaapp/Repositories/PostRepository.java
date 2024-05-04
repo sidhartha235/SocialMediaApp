@@ -1,8 +1,8 @@
 package cloud.rest.socialmediaapp.Repositories;
 
 import cloud.rest.socialmediaapp.Instances.Post;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PostRepository extends CrudRepository<Post, Long> {
+public interface PostRepository extends JpaRepository<Post, Long> {
     // No additional methods needed here, as CrudRepository provides CRUD operations out of the box
 }
