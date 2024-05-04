@@ -1,6 +1,12 @@
+package cloud.rest.socialmediaapp.Controllers;
+
+import cloud.rest.socialmediaapp.Instances.User;
+import cloud.rest.socialmediaapp.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")

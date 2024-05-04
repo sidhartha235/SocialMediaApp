@@ -1,3 +1,7 @@
+package cloud.rest.socialmediaapp.Services;
+
+import cloud.rest.socialmediaapp.Instances.User;
+import cloud.rest.socialmediaapp.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Optional;

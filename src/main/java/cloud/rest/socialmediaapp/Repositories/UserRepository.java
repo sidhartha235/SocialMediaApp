@@ -1,3 +1,6 @@
+package cloud.rest.socialmediaapp.Repositories;
+
+import cloud.rest.socialmediaapp.Instances.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
